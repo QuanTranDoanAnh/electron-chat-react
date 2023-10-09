@@ -1,13 +1,15 @@
 // Main process
-const { app, BrowserWindow, Notification } = require('electron')
+const { app, BrowserWindow } = require('electron')
 
 function createMainWindow() {
   // Browser Window <-- Renderer process
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 800,
     webPreferences: {
-      nodeIntegration: true,
+      nodeIntegration: false,
+      // is a feature that ensures that, 
+      //your preload scripts and Electron internal logics, run in separate context
       contextIsolation: false
     }
   })
@@ -15,11 +17,7 @@ function createMainWindow() {
   mainWindow.webContents.openDevTools()
 }
 
-app.whenReady().then(() => {
-  createMainWindow()
-  const notification = new Notification({ title: 'Hello World', body: 'My test message'})
-  notification.show()
-})
+app.whenReady().then(createMainWindow)
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
