@@ -1,8 +1,7 @@
 import React from "react";
 
 export default function App() {
-  debugger
-  const title = "Hello World New"
+  const title = "Hello World "
   const enhancedTitle = title + ' - React App'
 
   return (
