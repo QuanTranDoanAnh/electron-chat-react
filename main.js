@@ -1,5 +1,5 @@
 // Main process
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Notification } = require('electron')
 
 function createMainWindow() {
   // Browser Window <-- Renderer process
@@ -15,7 +15,11 @@ function createMainWindow() {
   mainWindow.webContents.openDevTools()
 }
 
-app.whenReady().then(createMainWindow)
+app.whenReady().then(() => {
+  createMainWindow()
+  const notification = new Notification({ title: 'Hello World', body: 'My test message'})
+  notification.show()
+})
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
