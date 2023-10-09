@@ -20,5 +20,9 @@
   "homepage": "https://github.com/QuanTranDoanAnh/electron-chat-react#readme",
   "devDependencies": {
     "electron": "^26.3.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
