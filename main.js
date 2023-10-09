@@ -1,5 +1,5 @@
 // Main process
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain, Notification } = require('electron')
 const path = require('path')
 const isDev = !app.isPackaged
 
@@ -9,7 +9,7 @@ function createMainWindow() {
     width: 1200,
     height: 800,
     webPreferences: {
-      nodeIntegration: false,
+      nodeIntegration: true,
       // is a feature that ensures that, 
       //your preload scripts and Electron internal logics, run in separate context
       contextIsolation: false
@@ -27,6 +27,10 @@ if (isDev) {
 }
 
 app.whenReady().then(createMainWindow)
+
+ipcMain.on('notify', (e, message) => {
+  new Notification({ title: 'Notification', body: message }).show()
+})
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
