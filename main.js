@@ -9,11 +9,12 @@ function createMainWindow() {
     width: 1200,
     height: 800,
     webPreferences: {
-      nodeIntegration: true,
+      nodeIntegration: false,
       // is a feature that ensures that, 
       //your preload scripts and Electron internal logics, run in separate context
-      contextIsolation: false
-    }
+      contextIsolation: false,
+      preload: path.join(__dirname, 'preload.js')
+    },
   })
   mainWindow.loadFile('index.html')
   isDev && mainWindow.webContents.openDevTools()
