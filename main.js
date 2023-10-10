@@ -12,7 +12,7 @@ function createMainWindow() {
       nodeIntegration: false,
       // is a feature that ensures that, 
       //your preload scripts and Electron internal logics, run in separate context
-      contextIsolation: false,
+      //contextIsolation: false, // default -> contextIsolation: true
       preload: path.join(__dirname, 'preload.js')
     },
   })
