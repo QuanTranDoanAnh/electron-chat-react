@@ -18,10 +18,10 @@ export default function App() {
       <Navbar />
       <div className='content-wrapper'>
         <Routes>
+          <Route path="/" Component={HomeView} />
           <Route path="/settings" Component={SettingsView} />
           <Route path="/login" Component={LoginView} />
-          <Route path="/register" Component={RegisterView} />
-          <Route path="/" Component={HomeView} />
+          <Route path="/register" Component={RegisterView} />          
         </Routes>
       </div >
     </Router >

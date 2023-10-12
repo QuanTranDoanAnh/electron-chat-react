@@ -1,19 +1,45 @@
-
-
 import React from "react"
-import Navbar from "../components/Navbar"
-import ViewTitle from "../components/shared/ViewTitle"
 
 export default function Register() {
 
 	return (
-		<div className="row no-gutters fh">
-			<div className="col-3 fh">
-				<div></div>
-			</div>
-			<div className="col-9 fh">
-				<ViewTitle />
-				<h1>I am Settings View</h1>
+		<div className="centered-view">
+			<div className="centered-container">
+				<form className="centered-container-form">
+					<div className="header">Adjust application settings</div>
+					<button type="button">Notify Me</button>
+					<div className="form-container">
+						<div className="my-3">
+							<div className="form-check">
+								<input
+									name="isDarkTheme"
+									type="checkbox"
+									className="form-check-input" />
+								<label className="form-check-label">Dark Theme</label>
+							</div>
+							<div className="form-check">
+								<input
+									name="showNotifications"
+									type="checkbox"
+									className="form-check-input" />
+								<label className="form-check-label">Enable Notification</label>
+							</div>
+							<div className="form-check">
+								<input
+									name="playSound"
+									type="checkbox"
+									className="form-check-input" />
+								<label className="form-check-label">Sound notification</label>
+							</div>
+						</div>
+						<button
+							type="button"
+							onClick={() => { }}
+							className="btn btn-danger">
+							Quit App
+						</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	)
