@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import LoginView from './views/Login'
 import RegisterView from './views/Register'
 import SettingsView from './views/Settings'
+import ChatView from './views/Chat'
 
 import {
   HashRouter as Router,
@@ -19,6 +20,7 @@ export default function App() {
       <div className='content-wrapper'>
         <Routes>
           <Route path="/" Component={HomeView} />
+          <Route path="/chat" Component={ChatView} />
           <Route path="/settings" Component={SettingsView} />
           <Route path="/login" Component={LoginView} />
           <Route path="/register" Component={RegisterView} />          
