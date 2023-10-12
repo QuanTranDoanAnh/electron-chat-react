@@ -20,7 +20,7 @@ export default function App() {
       <div className='content-wrapper'>
         <Routes>
           <Route path="/" Component={HomeView} />
-          <Route path="/chat" Component={ChatView} />
+          <Route path="/chat/:id" Component={ChatView} />
           <Route path="/settings" Component={SettingsView} />
           <Route path="/login" Component={LoginView} />
           <Route path="/register" Component={RegisterView} />          

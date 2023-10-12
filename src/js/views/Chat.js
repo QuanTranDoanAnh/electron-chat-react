@@ -1,11 +1,11 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import ChatUsersList from '../components/ChatUsersList'
 import ChatMessagesList from "../components/ChatMessagesList"
 import ViewTitle from "../components/shared/ViewTitle"
 
 export default function Chat() {
-	const navigate = useNavigate()
+	const { id } = useParams()
 	return (
 		
 		<div className="row no-gutters fh">
@@ -13,7 +13,7 @@ export default function Chat() {
 				<ChatUsersList />
 			</div>
 			<div className="col-9 fh">
-				<ViewTitle />
+				<ViewTitle text={ `Joined channel: ${id}`}/>
 				<ChatMessagesList />
 			</div>
 		</div>

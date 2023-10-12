@@ -1,7 +1,8 @@
 import React from "react"
+import { useNavigate } from "react-router-dom"
 
 export default function ChatUsersList() {
-
+	const navigate = useNavigate()
 	return (
 		<div className="list-container">
 			<div className="chat-search-box">
