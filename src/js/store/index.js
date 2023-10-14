@@ -1,13 +1,19 @@
-import { legacy_createStore } from "redux";
+import { legacy_createStore, applyMiddleware } from "redux";
+import thunkMiddleware from 'redux-thunk'
 
 export default function configureStore() {
+
+	const middlewares = [
+		thunkMiddleware
+	]
+
 	const store = legacy_createStore(() => {
 		return {
 			message: 'Hello World',
 			data1: 'just some testing data',
 			data2: 'just some testing data',
 		}
-	})
+	}, applyMiddleware(...middlewares))
 
 	return store
 }
