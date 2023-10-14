@@ -1,4 +1,6 @@
 // Import the functions you need from the SDKs you need
+//import { initializeApp } from 'firebase/app';
+//import { getFirestore } from 'firebase/firestore/lite'
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
@@ -7,14 +9,17 @@ import 'firebase/firestore';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAJkoNyhuVHKMorUaE9HxdblUX2P9UA6wU",
-  authDomain: "electron-chat-f921a.firebaseapp.com",
-  projectId: "electron-chat-f921a",
-  storageBucket: "electron-chat-f921a.appspot.com",
-  messagingSenderId: "85907034327",
-  appId: "1:85907034327:web:1f8fee0ef009d0fa032092",
-  measurementId: "G-4JC6CSZG2C"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
 export default firebase.initializeApp(firebaseConfig).firestore();
+//const firebaseApp = initializeApp(firebaseConfig);
+//const db = getFirestore(firebaseApp);
+//export default db;
