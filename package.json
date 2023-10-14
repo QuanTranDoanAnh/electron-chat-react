@@ -28,6 +28,7 @@
     "dotenv-webpack": "^8.0.1",
     "electron": "^26.3.0",
     "electron-reload": "^2.0.0-alpha.1",
+    "prettier": "^3.0.3",
     "sass": "^1.69.0",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
