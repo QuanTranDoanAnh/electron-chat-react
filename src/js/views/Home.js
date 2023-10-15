@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react"
 import JoinedChatsList from "../components/JoinedChatsList"
-import AvailableChats from "../components/AvailableChatsList"
+import AvailableChatsList from "../components/AvailableChatsList"
 import ViewTitle from "../components/shared/ViewTitle"
 
 import { useDispatch, useSelector } from "react-redux"
@@ -10,13 +10,9 @@ import { fetchChats } from '../actions/chats'
 
 export default function Home() {
 	const dispatch = useDispatch()
-	const chats = useSelector(({ chats }) => {
-		debugger
-		return chats.items
-	})
+	const chats = useSelector(({ chats }) => chats.items)
 
 	useEffect(() => {
-		debugger
 		dispatch(fetchChats())
 	}, [dispatch])
 
@@ -25,12 +21,11 @@ export default function Home() {
 
 		<div className="row no-gutters fh">
 			<div className="col-3 fh">
-				{ JSON.stringify(chats) }
-				<JoinedChatsList />
+				<JoinedChatsList chats={chats} />
 			</div>
 			<div className="col-9 fh">
 				<ViewTitle />
-				<AvailableChats />
+				<AvailableChatsList chats={chats} />
 			</div>
 		</div>
 
